@@ -3,12 +3,11 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"preinstall": "npm i typings -g",
-		"postinstall": "./src/typings install",
-		"start": "gulp build serve",
-		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -w"
+		"preinstall": "npm install -g typings",
+		"postinstall": "cd src && typings install"
 	},
 	"dependencies": {
+		"request": "^2.69.0"
 	},
 	"devDependencies": {
 		"gulp": "github:gulpjs/gulp#4.0",
@@ -20,9 +19,6 @@
 		"typescript": "*",
 		"typings": "*",
 		"path-exists": "^2.1.0"
-	},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
 	"author": "",
