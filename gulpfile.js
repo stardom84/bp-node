@@ -1,7 +1,25 @@
 var gulp = require('gulp'),
 	plugins = require('gulp-load-plugins')();
 
+var path = require('path');
+
 var pathExists = require('path-exists');
+
+process.env.NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
+process.env.PORT = process.env.PORT ? process.env.PORT : '8080';
+var env = {
+	NODE_ENV: process.env.NODE_ENV,
+	PORT: process.env.PORT,
+	get isDev() {
+		return this.NODE_ENV === 'development';
+	},
+	get isProd() {
+		return this.NODE_ENV === 'production';
+	},
+	get paths() {
+		return this.isDev ? paths.dev : paths.prod;
+	}
+};
 
 
 /**
@@ -16,6 +34,10 @@ function ts(filesRoot, filesGlob, filesDest, project) {
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.typescript(project));
 	return result.js
+		.pipe(plugins.if(env.isProd, plugins.uglify()))
+		.pipe(plugins.if(env.isDev, plugins.sourcemaps.write({
+			sourceRoot: path.join(__dirname, '/', filesRoot)
+		})))
 		.pipe(gulp.dest(filesDest))
 }
 
