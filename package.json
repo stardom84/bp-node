@@ -7,7 +7,6 @@
 		"postinstall": "cd src && typings install"
 	},
 	"dependencies": {
-		"request": "^2.69.0"
 	},
 	"devDependencies": {
 		"gulp": "github:gulpjs/gulp#4.0",
