@@ -1,25 +1,7 @@
 {
-	"name": "crawler",
-	"version": "1.0.0",
-	"description": "",
-	"scripts": {
-		"preinstall": "npm install -g typings",
-		"postinstall": "cd src && typings install"
-	},
-	"dependencies": {
-	},
-	"devDependencies": {
-		"gulp": "github:gulpjs/gulp#4.0",
-		"gulp-load-plugins": "*",
-		"gulp-tslint": "4.1.2",
-		"gulp-typescript": "2.10.0",
-		"tslint": "3.2.0-dev.1",
-		"gulp-sourcemaps": "1.6.0",
-		"typescript": "*",
-		"typings": "*",
-		"path-exists": "^2.1.0"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "MIT"
+  "dependencies": {},
+  "devDependencies": {},
+  "ambientDependencies": {
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#aee0039a2d6686ec78352125010ebb38a7a7d743"
+  }
 }
