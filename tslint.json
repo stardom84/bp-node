@@ -17,9 +17,7 @@
 		],
 		"class-name": true,
 		"comment-format": [
-			true,
-			"check-space",
-			"check-lowercase"
+			true
 		],
 		"curly": true,
 		"eofline": false,
@@ -50,7 +48,7 @@
 		"no-debugger": true,
 		"no-duplicate-key": true,
 		"no-duplicate-variable": true,
-		"no-empty": true,
+		"no-empty": false,
 		"no-eval": true,
 		"no-string-literal": true,
 		"no-trailing-comma": true,
@@ -99,11 +97,7 @@
 				"space"
 			]
 		],
-		"use-strict": [
-			true,
-			"check-module",
-			"check-function"
-		],
+		"use-strict": [],
 		"variable-name": false,
 		"whitespace": [
 			false,
